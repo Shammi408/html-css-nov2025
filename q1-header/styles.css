@@ -1,0 +1,95 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #fff;
+  color: #111;
+  line-height: 1.4;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #410909;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, nav middle, CTA right */
+  gap: 20px;
+}
+
+.logo {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+
+.main-nav {
+  flex: 1 1 auto;           
+  display: flex;
+  justify-content: center;  
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;  /* Allows wrapping instead of overflow */
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links a {
+  display: inline-block;
+  text-decoration: none;
+  color: #e6f4ea;
+  padding: 8px 6px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color .15s, color .15s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+}
+
+.cta-button {
+  display: inline-block;
+  text-decoration: none;
+  background: #ff5733;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: 1px solid rgba(0,0,0,0.08);
+  white-space: nowrap;
+}
+
+a:focus,
+button:focus,
+.cta-button:focus,
+.nav-links a:focus,
+.logo:focus {
+  outline: 3px solid rgba(255, 214, 92, 0.85);
+  outline-offset: 3px;
+}
+
+main { padding: 20px; }
+.content { 
+  max-width: 1000px;
+  margin: 0 auto;
+}

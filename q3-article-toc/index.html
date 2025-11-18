@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Article with Sticky TOC</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="main-content">
+    <section class="layout" aria-labelledby="page-title">
+      <h1 id="page-title" class="visually-hidden">Article: CSS Grid & Semantic HTML</h1>
+
+      <article class="content" aria-labelledby="article-heading">
+        <header>
+          <h2 id="article-heading">Understanding CSS Grid & Semantics</h2>
+          <p class="lede">A concise guide with examples and a small figure.</p>
+        </header>
+
+        <h3 id="intro">Introduction</h3>
+        <p>CSS Grid is a two-dimensional layout system that lets you build responsive layouts with rows and columns.</p>
+
+        <h3 id="grid-container">Grid Container Properties</h3>
+        <p>Properties like <code>display: grid</code>, <code>grid-template-columns</code>, and <code>gap</code> define the overall grid.</p>
+
+        <h3 id="grid-items">Grid Item Properties</h3>
+        <p>Items inside a grid can span multiple columns, be aligned, or be positioned precisely.</p>
+
+        <h3 id="example">Example — Simple Grid</h3>
+        <figure>
+          <img src="./assets/hero.png" alt="Diagram showing CSS Grid columns and rows" />
+          <figcaption>Figure: Distributed Grid with four columns and three rows.</figcaption>
+        </figure>
+
+        <h3 id="responsive">Responsive Tips</h3>
+        <p>Use <code>repeat(auto-fit, minmax())</code> to create fluid column counts that collapse into a single column on narrow screens.</p>
+      </article>
+
+      <nav class="toc" aria-labelledby="toc-heading">
+        <h3 id="toc-heading">On this page</h3>
+        <ul>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#grid-container">Grid Container Properties</a></li>
+          <li><a href="#grid-items">Grid Item Properties</a></li>
+          <li><a href="#example">Example — Simple Grid</a></li>
+          <li><a href="#responsive">Responsive Tips</a></li>
+        </ul>
+      </nav>
+    </section>
+  </main>
+</body>
+</html>

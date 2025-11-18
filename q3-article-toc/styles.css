@@ -1,0 +1,110 @@
+:root{
+  --gap: 1.25rem;
+  --max-width: 1100px;
+  --toc-width: 280px;
+  --page-padding: 1rem;
+  --focus: 3px solid rgba(11,95,255,0.15);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html,body {
+  height:100%;
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:#fbfbfc;
+  color:#111827;
+  scroll-behavior: smooth; /* smooth in-page scroll for TOC links */
+}
+.visually-hidden {
+  position: absolute !important;
+  height:1px; width:1px;
+  overflow:hidden; clip:rect(1px,1px,1px,1px);
+  white-space:nowrap;
+}
+
+.layout{
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 0 var(--page-padding);
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr minmax(200px, var(--toc-width));
+  align-items: start;
+}
+
+.content{
+  background: rgb(153, 121, 121);
+  padding: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba(15,23,42,0.06);
+  box-shadow: 0 6px 18px rgba(15,23,42,0.03);
+}
+
+.content h2 { margin-top: 0; font-size: 1.5rem; }
+.content h3 { margin: 1.25rem 0 0.5rem; font-size: 1.1rem; }
+.content p { margin: 0 0 0.9rem; line-height: 1.5; color: #374151; }
+.content figure { margin: 1rem 0; }
+.content img { width:100%; height:auto; border-radius: 8px; display:block; }
+
+.toc {
+  position: relative;
+  padding: 1rem;
+}
+.toc h3 { margin: 0 0 0.5rem; font-size: 1rem; }
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* make the TOC sticky */
+.toc {
+  align-self: start;
+  background-color: rgb(248, 227, 202);
+}
+.toc > h3 + ul {
+  position: sticky;
+  top: 1rem; 
+  padding-top: 0.5rem;
+}
+
+.toc a {
+  color: #0f4cbe;
+  text-decoration: none;
+  padding: 0.25rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+.toc a:hover,
+.toc a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+.toc a:focus-visible {
+  box-shadow: var(--focus);
+  background: rgba(11,95,255,0.06);
+}
+
+/* Ensure no horizontal overflow */
+img, pre, code { max-width: 100%; }
+/* Responsive: single column on small screens */
+@media (max-width: 820px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  /* place TOC above content on narrow screens (you can flip order easily) */
+  .toc { order: -1; margin-bottom: calc(var(--gap) / 2); }
+  .toc > h3 + ul { position: static; top: auto; } /* disable sticky on small screens for better UX */
+}
+
+/* Small tweak for very small screens */
+@media (max-width: 420px) {
+  .content { padding: 0.9rem; }
+  .toc { padding: 0.6rem; }
+}
